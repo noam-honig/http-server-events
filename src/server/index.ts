@@ -3,13 +3,13 @@ import { ServerEventsController } from './server-events';
 import cors from 'cors';
 
 
-const serverEvents = new ServerEventsController();
 let app = express();
 if (process.env['NODE_ENV'] !== "production")
-    app.use(cors({}));
+app.use(cors({}));
 
 // 1. Register this endpoint, before the call to 'compression' or it'll break
 // 2. Register this endpoint, after the call to expressjwt on order to get the auth/user property of the request set based on the current user.
+const serverEvents = new ServerEventsController();
 app.get('/api/stream', (req, res) => {
     serverEvents.subscribe(req, res,
         (message, type) => true //return true to send the message - use this arrow function to filter the messages based on the user or other rules
