@@ -9,7 +9,7 @@ npm run dev
 ```
 
 ## Live sample
-see [Live sample on heroku]()
+see [Live sample on heroku](https://calm-spire-06898.herokuapp.com/)
 
 ## How to use:
 1. Install `@microsoft/fetch-event-source`
